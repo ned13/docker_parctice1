@@ -1,2 +1,14 @@
 jenkinsdata:
-    build: jenkins-data
+ build: jenkins-data
+jenkinsmaster:
+ build: jenkins-master
+ volumes_from:
+  - jenkinsdata #docker-compose maintains dependency of jenkinsdata, no need to maintain order.
+ ports:
+  - "50000:50000"
+jenkinsnginx:
+ build: jenkins-nginx
+ ports:
+  - "80:80"
+ links:
+  - jenkinsmaster:jenkins-master # nignx's configuration refer to jenkins-master then map to jenkinsmater in docker-compose.

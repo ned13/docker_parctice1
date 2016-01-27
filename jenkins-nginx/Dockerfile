@@ -1,5 +1,5 @@
 FROM centos:centos7
-MAINTAINER Ned Wu
+MAINTAINER Mooncat
 
 RUN yum -y update; yum clean all
 RUN yum -y install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm; yum -y makecache

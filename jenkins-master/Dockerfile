@@ -1,5 +1,5 @@
 FROM jenkins:1.609.1
-MAINTAINER Ned Wu
+MAINTAINER Mooncat
 
 USER root
 RUN mkdir /var/log/jenkins
